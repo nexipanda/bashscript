@@ -9,8 +9,7 @@ NC='\033[0m' # No Color
 
 # Função para exibir cabeçalho
 show_header() {
-    clear
-    echo -e "${BLUE}========================================${NC}"
+    echo -e "\n${BLUE}========================================${NC}"
     echo -e "${BLUE}    MENU DE 50 OPÇÕES                ${NC}"
     echo -e "${BLUE}========================================${NC}"
     echo ""
@@ -82,254 +81,256 @@ while true; do
     
     case $choice in
         1)
-            echo -e "${BLUE}==> Executando: webserver.sh${NC}"
+            echo -e "\n${BLUE}==> Executando: webserver.sh${NC}"
             curl -fsSL "https://raw.githubusercontent.com/nexipanda/bashscript/refs/heads/main/scripts/webserver.sh" | sudo bash
-            echo ""
+            echo -e "\n${GREEN}Script executado!${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         2)
             # echo "sudo apt upgrade -y"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         3)
             # echo "sudo apt install apache2"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         4)
             # echo "sudo apt install nginx"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         5)
             # echo "sudo apt install mysql-server"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         6)
             # echo "sudo apt install php"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         7)
             # echo "sudo systemctl start apache2"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         8)
             # echo "sudo systemctl enable nginx"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         9)
             # echo "sudo apt install git"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         10)
             # echo "sudo apt install curl"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         11)
             # echo "sudo apt install wget"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         12)
             # echo "sudo apt install vim"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         13)
             # echo "sudo apt install nano"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         14)
             # echo "sudo apt install htop"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         15)
             # echo "sudo apt install tree"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         16)
             # echo "sudo apt install unzip"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         17)
             # echo "sudo apt install zip"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         18)
             # echo "sudo apt install tar"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         19)
             # echo "sudo apt install gzip"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         20)
             # echo "sudo apt install bzip2"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         21)
             # echo "sudo apt install python3"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         22)
             # echo "sudo apt install python3-pip"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         23)
             # echo "sudo apt install nodejs"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         24)
             # echo "sudo apt install npm"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         25)
             # echo "sudo apt install docker.io"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         26)
             # echo "sudo apt install docker-compose"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         27)
             # echo "sudo apt install snapd"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         28)
             # echo "sudo apt install flatpak"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         29)
             # echo "sudo apt install ufw"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         30)
             # echo "sudo apt install fail2ban"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         31)
             # echo "sudo apt install clamav"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         32)
             # echo "sudo apt install rkhunter"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         33)
             # echo "sudo apt install lynis"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         34)
             # echo "sudo apt install net-tools"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         35)
             # echo "sudo apt install iftop"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         36)
             # echo "sudo apt install iotop"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         37)
             # echo "sudo apt install nethogs"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         38)
             # echo "sudo apt install slurm"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         39)
             # echo "sudo apt install bmon"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         40)
             # echo "sudo apt install speedtest-cli"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         41)
             # echo "sudo apt install traceroute"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         42)
             # echo "sudo apt install nmap"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         43)
             # echo "sudo apt install wireshark"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         44)
             # echo "sudo apt install tcpdump"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         45)
             # echo "sudo apt install iptables"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         46)
             # echo "sudo apt install iproute2"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         47)
             # echo "sudo apt install bridge-utils"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         48)
             # echo "sudo apt install vlan"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         49)
             # echo "sudo apt install bonding"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         50)
             # echo "sudo apt install teamd"
-            echo -e "${RED}Opção comentada - não executa nada${NC}"
+            echo -e "\n${RED}Opção comentada - não executa nada${NC}"
             read -p "Pressione Enter para continuar..."
             ;;
         51)
@@ -337,7 +338,7 @@ while true; do
             exit 0
             ;;
         *)
-            echo -e "${RED}Opção inválida! Digite um número de 1 a 51.${NC}"
+            echo -e "\n${RED}Opção inválida! Digite um número de 1 a 51.${NC}"
             echo ""
             read -p "Pressione Enter para continuar..."
             ;;

@@ -1,0 +1,2 @@
+# bashscript
+scripts para linux

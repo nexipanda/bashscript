@@ -6,7 +6,7 @@ while true; do
     echo "=================================="
     echo "         MENU PRINCIPAL"
     echo "=================================="
-    echo "1) web server"
+    echo "1) Verificar data e hora"
     echo "2) Mostrar diretório atual"
     echo "3) Listar arquivos"
     echo "4) Reiniciar serviço (exemplo)"
@@ -16,9 +16,8 @@ while true; do
 
     case $opcao in
         1)
-            echo "web server instaler:"
-            sleep 2
-            curl -fsSL "https://raw.githubusercontent.com/nexipanda/bashscript/refs/heads/main/scripts/webserver.sh" | sudo bash
+            echo "Data e hora atuais:"
+            date
             ;;
         2)
             echo "Diretório atual:"

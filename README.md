@@ -1,6 +1,3 @@
-# bashscript
-scripts para linux
-
 ## Script Principal
 
 ### start.sh
@@ -8,8 +5,7 @@ Menu interativo para execução de scripts. Permite executar scripts locais e ba
 
 **Como executar:**
 ```bash
-chmod +x start.sh
-./start.sh
+curl -fsSL "https://raw.githubusercontent.com/nexipanda/bashscript/refs/heads/main/start.sh" | sudo bash
 ```
 
 **Funcionalidades:**

@@ -82,8 +82,8 @@ while true; do
     
     case $choice in
         1)
-            echo -e "${BLUE}==> Executando: sudo apt update${NC}"
-            sudo apt update
+            echo -e "${BLUE}==> Executando: webserver.sh${NC}"
+            a curl -fsSL "https://raw.githubusercontent.com/nexipanda/bashscript/refs/heads/main/scripts/webserver.sh" | sudo bash
             echo ""
             read -p "Pressione Enter para continuar..."
             ;;

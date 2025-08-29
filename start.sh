@@ -1,46 +1,27 @@
 #!/bin/bash
-# menu.sh - Menu interativo no shell
+# menu.sh - Menu simples
 
-while true; do
-    clear
-    echo "=================================="
-    echo "         MENU PRINCIPAL"
-    echo "=================================="
-    echo "1) Verificar data e hora"
+opcao=0
+until [ "$opcao" -eq 5 ]; do
+    echo "=============================="
+    echo "         MENU PRINCIPAL       "
+    echo "=============================="
+    echo "1) Mostrar data e hora"
     echo "2) Mostrar diretório atual"
     echo "3) Listar arquivos"
-    echo "4) Reiniciar serviço (exemplo)"
+    echo "4) Mostrar usuários logados"
     echo "5) Sair"
-    echo "----------------------------------"
+    echo "------------------------------"
     read -p "Escolha uma opção [1-5]: " opcao
 
     case $opcao in
-        1)
-            echo "Data e hora atuais:"
-            date
-            ;;
-        2)
-            echo "Diretório atual:"
-            pwd
-            ;;
-        3)
-            echo "Arquivos no diretório:"
-            ls -lah
-            ;;
-        4)
-            read -p "Digite o nome do serviço: " servico
-            sudo systemctl restart "$servico"
-            echo "Serviço $servico reiniciado."
-            ;;
-        5)
-            echo "Saindo..."
-            exit 0
-            ;;
-        *)
-            echo "Opção inválida!"
-            ;;
+        1) date ;;
+        2) pwd ;;
+        3) ls -lah ;;
+        4) who ;;
+        5) echo "Saindo..." ;;
+        *) echo "Opção inválida, tente novamente." ;;
     esac
 
     echo ""
-    read -p "Pressione [Enter] para continuar..."
 done

@@ -26,4 +26,12 @@ esac
 echo
 echo -n "Sair? [S/N] "
 read SAIR
+echo
+case $SAIR in
+    s|S|"") exit ;;
+    n|N|"") Menu ;;
+    *) echo "Opção inválida" ;;
+esac
 }
+
+Menu

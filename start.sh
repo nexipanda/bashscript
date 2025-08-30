@@ -9,7 +9,8 @@ echo "2) Mostrar data"
 echo "3) Sair"
 echo "=========================="
 
-read -p "Escolha uma opção: " opcao
+# Lê a entrada diretamente do terminal
+read -p "Escolha uma opção: " opcao </dev/tty
 
 case $opcao in
     1)

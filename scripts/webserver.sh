@@ -33,6 +33,7 @@ case $web_choice in
 esac
 
 # Pergunta sobre PHP
+echo ""
 echo "Deseja instalar PHP?"
 echo "1) Sim"
 echo "2) Não"
@@ -67,6 +68,7 @@ else
 fi
 
 # Pergunta sobre MySQL
+echo ""
 echo "Deseja instalar MySQL?"
 echo "1) Sim"
 echo "2) Não"
@@ -79,6 +81,7 @@ if [ "$mysql_choice" = "1" ]; then
     sudo systemctl start mysql
     
     # Pergunta sobre configuração segura
+    echo ""
     echo "Deseja executar a configuração segura do MySQL?"
     echo "1) Sim"
     echo "2) Não"
@@ -93,6 +96,7 @@ fi
 
 # Pergunta sobre phpMyAdmin (só se MySQL e PHP estiverem instalados)
 if [ "$mysql_choice" = "1" ] && [ "$php_choice" = "1" ]; then
+    echo ""
     echo "Deseja instalar phpMyAdmin?"
     echo "1) Sim"
     echo "2) Não"
@@ -105,17 +109,17 @@ if [ "$mysql_choice" = "1" ] && [ "$php_choice" = "1" ]; then
         # Configuração para Apache
         if [ "$WEB_SERVER" = "apache" ]; then
             # Criar link simbólico para acessar via navegador
-            if [ ! -d /var/www/html/phpmyadmin ]; then
+            if [ ! -L /var/www/html/phpmyadmin ]; then
                 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
             fi
-            sudo systemctl restart apache2
         fi
         
         # Configuração para Nginx
         if [ "$WEB_SERVER" = "nginx" ]; then
             # Configurar Nginx para phpMyAdmin
             if [ ! -f /etc/nginx/conf.d/phpmyadmin.conf ]; then
-                echo "server {
+                sudo tee /etc/nginx/conf.d/phpmyadmin.conf > /dev/null << EOF
+server {
     listen 80;
     server_name _;
     root /usr/share/phpmyadmin;
@@ -125,11 +129,12 @@ if [ "$mysql_choice" = "1" ] && [ "$php_choice" = "1" ]; then
         try_files \$uri \$uri/ /index.php\$is_args\$args;
     }
 
-    location ~ \.php$ {
+    location ~ \.php\$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php-fpm.sock;
     }
-}" | sudo tee /etc/nginx/conf.d/phpmyadmin.conf > /dev/null
+}
+EOF
                 sudo systemctl reload nginx
             fi
         fi
@@ -138,7 +143,7 @@ if [ "$mysql_choice" = "1" ] && [ "$php_choice" = "1" ]; then
         sudo phpenmod mbstring
         if [ "$WEB_SERVER" = "apache" ]; then
             sudo systemctl restart apache2
-        else
+        elif [ "$WEB_SERVER" = "nginx" ]; then
             sudo systemctl restart php-fpm
         fi
     fi
@@ -148,10 +153,12 @@ fi
 
 # Mostrar informações finais
 IP=$(hostname -I | awk '{print $1}')
+echo ""
 echo "===================================================="
 echo "Instalação concluída!"
 [ "$WEB_SERVER" = "apache" ] && echo "Apache rodando em: http://$IP/"
 [ "$WEB_SERVER" = "nginx" ] && echo "Nginx rodando em: http://$IP/"
-[ "$php_choice" = "1" ] && echo "Teste PHP em:       http://$IP/info.php"
+[ "$php_choice" = "1" ] && [ "$WEB_SERVER" = "apache" ] && echo "Teste PHP em:       http://$IP/info.php"
+[ "$php_choice" = "1" ] && [ "$WEB_SERVER" = "nginx" ] && echo "Teste PHP em:       http://$IP/info.php"
 [ "$phpmyadmin_choice" = "1" ] && echo "phpMyAdmin em:      http://$IP/phpmyadmin"
 echo "===================================================="
